@@ -107,18 +107,17 @@ const romano = {
 addToGroceryList(romano)
 
 // console.log(groceryList)
+const expensiveGroceries = []
 
 const findExpensiveGroceries = () => {
-    const expensiveGroceries = []
     for (grocery of groceryList) {
-        if (grocery.price >= 8.00) {
-            expensiveGroceries.push(grocery)
-            console.log(expensiveGroceries)
+        if (grocery.price > 7.99) {
+            expensiveGroceries.unshift(grocery)
+            console.log(expensiveGroceries, "new array")
+            console.log(groceryList, "original array")
         }
     }
     return expensiveGroceries //return occurs inside function but outside for and if loops
 
 }
-const expensiveGroceries = findExpensiveGroceries() //calling the function logs the array
-console.log(expensiveGroceries)
-    //findExpensiveGroceries(expensiveGroceries) throws error message: Object.<anonymous>
+findExpensiveGroceries(groceryList) //calling the function logs the array
